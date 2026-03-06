@@ -1,0 +1,9 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', -apple-system, sans-serif; }
+button { transition: opacity 0.15s, transform 0.1s; }
+button:hover:not(:disabled) { opacity: 0.88; }
+button:active:not(:disabled) { transform: scale(0.97); }
+button:disabled { cursor: not-allowed; }
+input:focus { border-color: #667eea !important; box-shadow: 0 0 0 3px rgba(102,126,234,0.15); }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }

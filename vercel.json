@@ -1,0 +1,8 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/check-rank.js": { "maxDuration": 30 },
+    "api/check-all.js":  { "maxDuration": 60 }
+  }
+}
