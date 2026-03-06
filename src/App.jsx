@@ -87,11 +87,12 @@ export default function App() {
     if (!form.target_domain.trim()) return setAddError('調査ドメインを入力してください')
     // ドメイン正規化
     const domain = form.target_domain.trim().replace(/^https?:\/\//, '').replace(/\/.*$/, '')
-    const { error } = await supabase.from('seo_keywords').insert({
+    const { data, error } = await supabase.from('seo_keywords').insert({
       keyword: form.keyword.trim(),
       target_domain: domain,
-    })
-    if (error) { setAddError('追加に失敗しました'); return }
+    }).select()
+    console.log('insert result:', { data, error })
+    if (error) { setAddError(`追加失敗: ${error.message || error.code || JSON.stringify(error)}`); return }
     setForm({ keyword: '', target_domain: '' })
     await fetchData()
     flash('✅ キーワードを追加しました')
