@@ -4,5 +4,11 @@
   "functions": {
     "api/check-rank.js": { "maxDuration": 30 },
     "api/check-all.js":  { "maxDuration": 60 }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/check-all?notify=1",
+      "schedule": "0 0 * * *"
+    }
+  ]
 }
